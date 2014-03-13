@@ -1,0 +1,155 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap
+ *= require_self
+ */
+
+body {
+    font-family: "Gabriela", Georgia, sans-serif;
+    font-size: 2.3em;
+    color: tomato;
+}
+
+/* LAYOUT */
+.footer {
+    background: #28934b;
+    height: 2em;
+    position: fixed;
+    bottom: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background: tomato;
+    height: 3.5em;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.container-fluid { margin-top: .7em; margin-left: 0.5em; }
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand { color: white; }
+.navbar-default .navbar-nav>li>a:hover { color:  #38d16d; }
+.navbar-default .navbar-brand:hover { color: white; }
+.navbar-brand { font-size: 1.4em; }
+.navbar-brand h1 { margin: 0;}
+a.navbar-brand { padding: 0.1em;}
+ul.navbar-nav { margin-left: 1em;}
+
+/* INDEX */
+.index-row {margin-top: 3em;}
+
+.image-box {
+    text-align: right;
+    width: 20em;
+}
+
+.text {
+    text-align: justify;
+}
+
+.login {
+    background: red;
+    margin: 1em;
+}
+
+.button {
+    float: right;
+    width: 5.5em;
+    padding: 0.3em;
+    text-align: center;
+    color: white;
+    background-color: #38d16d;
+}
+
+.login_text {
+    color: #38d16d;
+    margin-right: .3em;
+    padding: 0.3em;
+    float: right;
+}
+
+.author h2 {
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    margin-top: .6em;
+}
+
+/* START */
+.hint { text-align: justify; font-size: 0.8em;}
+.hint h3 { color: #38d16d; }
+
+.start-row h1 {font-size: 2.4em; text-align: center; margin-bottom: .5em;}
+input {
+    color: #38d16d;
+    border: none;
+    padding: 0;
+    width: 17em;
+}
+
+input::-webkit-input-placeholder { color: #38d16d; }
+input:focus { outline: 0; }
+
+ol.tasks {
+    margin: 0;
+    padding-left: 1.1em;
+}
+
+ol li {
+    cursor: pointer;
+}
+
+.selected {
+    color:  #38d16d;
+}
+
+.timer {
+    margin-top: 0;
+    background-color: #b84733;
+    color: tomato;
+}
+
+.buttons {margin-left: 1em; overflow: hidden;}
+.twenty-five {
+    font-size: 1.4em;
+    cursor: pointer;
+    float: left;
+    width: 2em;
+    text-align: center;
+}
+
+.five {
+    float: left;
+    font-size: 1.4em;
+    color:  #38d16d;
+    background-color: #28934b;
+    cursor: pointer;
+    width: 2em;
+    text-align: center;
+}
+
+/* ABOUT */
+.about-text h2 { margin-top: .8em; color: #38d16d; font-size: 1.9em; }
+.about-text {
+    text-align: justify;
+    font-size: 0.9em;
+}
+
+.about-text.last {padding-bottom: 3em;}
+.about-text a { color: #38d16d; }
+
+.image-in-text {
+    margin: auto;
+    width: 8em;
+}
+
+
