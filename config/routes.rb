@@ -1,4 +1,5 @@
 PomodoroTimer::Application.routes.draw do
+  devise_for :users
   get "static_pages/home"
   get "static_pages/about"
   get "static_pages/start"

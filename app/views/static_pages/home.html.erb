@@ -15,8 +15,12 @@
           about this app, pomodoro technique and us. </p>
 
         <div class="login">
-          <span class="button"> Sign-up </span>
-          <span class="login_text">login or</span>
+          <%= link_to new_user_registration_path do %>
+            <span class="button"> Sign-up </span>
+          <% end %>
+          <%= link_to new_user_session_path do %>
+            <span class="login_text">login or</span>
+          <% end %>
         </div>
       </article>
     </div>

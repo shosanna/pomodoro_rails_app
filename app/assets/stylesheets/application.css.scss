@@ -41,7 +41,7 @@ body {
 .navbar-default .navbar-brand:hover { color: white; }
 .navbar-brand { font-size: 1.4em; }
 .navbar-brand h1 { margin: 0;}
-a.navbar-brand { padding: 0.1em;}
+span.navbar-brand { padding: 0.1em;}
 ul.navbar-nav { margin-left: 1em;}
 
 /* INDEX */
@@ -89,7 +89,7 @@ ul.navbar-nav { margin-left: 1em;}
 .hint h3 { color: #38d16d; }
 
 .start-row h1 {font-size: 2.4em; text-align: center; margin-bottom: .5em;}
-input {
+input.new-task-tex {
     color: #38d16d;
     border: none;
     padding: 0;
@@ -153,3 +153,16 @@ ol li {
 }
 
 
+/* DEVISE */
+.row.devise {
+  font-size: 0.85em;
+  margin-top: 2em;
+}
+.devise a {
+  color: #38d16d;
+}
+
+.divider {
+  font-size: 0.8em;
+  margin-top: 2em;
+}
