@@ -157,6 +157,7 @@ ol li {
 .row.devise {
   font-size: 0.85em;
   margin-top: 2em;
+  padding-bottom: 3em;
 }
 .devise a {
   color: #38d16d;
@@ -166,3 +167,7 @@ ol li {
   font-size: 0.8em;
   margin-top: 2em;
 }
+
+.navbar-text { font-size: 0.7em;}
+p.navbar-text.pull-right, .navbar-text .navbar-link {color: white;}
+.navbar-text .navbar-link:hover {color: #38d16d; text-decoration: none;}
