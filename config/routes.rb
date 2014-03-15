@@ -1,11 +1,13 @@
 PomodoroTimer::Application.routes.draw do
-  devise_for :users
-  get "static_pages/home"
-  get "static_pages/about"
-  get "static_pages/start"
-  get "static_pages/tasks"
+  get "home/home"
+  get "home/about"
+  get "tasks/index"
+  get "tasks/start"
+  resources :tasks
 
-  root to: 'static_pages#home'
+  devise_for :users
+
+  root to: 'home#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
