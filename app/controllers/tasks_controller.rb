@@ -3,9 +3,12 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @tasks = current_user.tasks || Task.all
+    if current_user
+      @tasks = current_user.tasks
+    else
+      @tasks = Task.all
+    end
   end
-
 
 
   def create
