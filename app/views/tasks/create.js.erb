@@ -1,2 +1,2 @@
-add(<%= j @task.to_json %>);
-renderTasks(0;)
+$(".tasks").html("<%= j render @tasks %>");
+$("#task_content").val("");

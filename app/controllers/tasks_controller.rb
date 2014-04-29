@@ -1,6 +1,4 @@
-class TasksController < ApplicationController
-
-
+class TasksController < AuthenticatedController
   def index
     @task = Task.new
     if current_user
@@ -14,6 +12,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(params.require(:task).permit(:content))
     @task.save!
+    @tasks = Task.all
   end
 
   def destroy
@@ -24,7 +23,6 @@ class TasksController < ApplicationController
 
   end
 
-
   def start
     @task = Task.new
     if current_user
@@ -32,7 +30,5 @@ class TasksController < ApplicationController
     else
       @tasks = Task.all
     end
-
   end
-
 end

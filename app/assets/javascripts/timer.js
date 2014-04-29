@@ -98,10 +98,10 @@ $(document).ready(function() {
   });
 
   // Tasks are sortable
-  $(".sortable").sortable({
-    revert: true
-  });
-  $("ul, li").disableSelection();
+  // $(".sortable").sortable({
+  //   revert: true
+  // });
+  // $("ul, li").disableSelection();
 
   // MODEL
   var tasks = window.tasks = [];
