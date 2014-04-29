@@ -12,15 +12,8 @@ class TasksController < ApplicationController
 
 
   def create
-    task = Task.new
-    task.content = params[:task][:content]
-
-    if current_user
-      task.user_id = current_user.id
-    end
-
-    task.save
-    redirect_to :back
+    @task = current_user.tasks.build(params.require(:task).permit(:content))
+    @task.save!
   end
 
   def destroy

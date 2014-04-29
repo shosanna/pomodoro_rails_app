@@ -6,36 +6,66 @@
 </section>
 <section class="container">
   <div class="row start-row">
-    <div class="col-md-8">
 
-      <%= simple_form_for @task do |f| %>
-          <%= f.input :content, label: false %>
-          <%= f.button :submit %>
-      <% end %>
+    <div class="headline">
+      <div class="main twenty clickable"><p>20</p></div>
+      <div class="main pink five clickable"><p>5</p></div>
+      <div class="timer">
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <p class="hidden"> Interrupt?</p>
+      </div>
 
+      <div class="overlay"></div>
     </div>
-    <div class="col-md-8">
-      <ul>
-        <% @tasks.each do |task| %>
-            <li> <%= task.content %> </li>
-        <% end %>
+    <div id="box">
+      <%= form_for Task.new, remote: true do |f| %>
+        <%= f.text_field :content, placeholder: "Type a task and hit enter" %>
+    <% end %>
 
+      <ul class="sortable tasks">
+        <%= render partial: "tasks/task", collection: @tasks %>
       </ul>
-
-
     </div>
+    <div class="quote" id="quote">
 
-    <div class="col-md-3 col-md-offset-1">
-      <aside class="hint">
-        <h3>Instructions:</h3>
-
-        <p>Select a task which you are going to work on from a list. You can add new tasks any time. </p>
-
-        <p>When you have one task selected, you can start a pomodoro by clicking on a 25 button.</p>
-
-        <p>Don't forget you can't pause it! After work, use a 5 minutes button to take a break.
-        </p>
-      </aside>
     </div>
   </div>
+
+  <div class="col-md-8">
+    <ul>
+    </ul>
+  </div>
+
+  <div class="col-md-3 col-md-offset-1">
+    <aside class="hint">
+      <h3>Instructions:</h3>
+
+      <p>Select a task which you are going to work on from a list. You can add new tasks any time. </p>
+
+      <p>When you have one task selected, you can start a pomodoro by clicking on a 25 button.</p>
+
+      <p>Don't forget you can't pause it! After work, use a 5 minutes button to take a break.
+      </p>
+    </aside>
+  </div>
+</div>
 </section>
