@@ -7,6 +7,9 @@ gem 'simple_form'
 gem 'jquery-ui-rails'
 gem "pry"
 
+gem 'ember-rails'
+gem 'ember-source', '1.5.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

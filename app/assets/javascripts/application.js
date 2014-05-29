@@ -1,11 +1,12 @@
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require bootstrap
-//= require_tree .
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require pomodoro_timer
 
-
-$(function(){
-  $(".new-tasks-text").focus();
+// for more details see: http://emberjs.com/guides/application/
+window.App = Ember.Application.create({
+  rootElement: "#ember-app",
+  LOG_TRANSITIONS: true
 });
-
