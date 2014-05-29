@@ -8,5 +8,6 @@
 // for more details see: http://emberjs.com/guides/application/
 window.App = Ember.Application.create({
   rootElement: "#ember-app",
+  location: "history",
   LOG_TRANSITIONS: true
 });

@@ -1,12 +1,14 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <!-- <%= link_to home_home_path do %> -->
-      <!--   <span class="navbar&#45;brand"><h1>Pomodoro Timer</h1></span> -->
-      <!-- <% end %> -->
+      {{#link-to "timer"}}
+        <span class="navbar-brand"><h1>Pomodoro Timer</h1></span>
+      {{/link-to}}
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+      <li>{{#link-to "index"}}Index{{/link-to}}</li>
+      <li>{{#link-to "timer"}}Timer{{/link-to}}</li>
       </ul>
       <p class="navbar-text pull-right">
       </p>
