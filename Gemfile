@@ -9,6 +9,7 @@ gem "pry"
 
 gem 'ember-rails'
 gem 'ember-source', '1.5.0'
+gem 'active_model_serializers'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

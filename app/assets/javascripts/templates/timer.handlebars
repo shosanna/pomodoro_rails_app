@@ -8,7 +8,7 @@
   <div class="row start-row">
     <div id="box">
       <form>
-        {{input name="content" placeholder="Type a task and hit enter"}}
+        {{input name="content" placeholder="Type a task and hit enter" value=newTask.content action="saveTask"}}
       </form>
 
     </div>
@@ -18,7 +18,11 @@
   </div>
 
   <div class="col-md-8">
+    <h1>{{model.length}}</h1>
     <ul class="tasks">
+      {{#each task in model}}
+        <li>{{task.content}}</li>
+      {{/each}}
     </ul>
   </div>
 

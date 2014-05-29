@@ -1,37 +1,25 @@
-class TasksController < AuthenticatedController
+class TasksController < ApplicationController
   def index
-    @task = Task.new
-    if current_user
-      @tasks = current_user.tasks
-    else
-      @tasks = Task.all
-    end
+    render json: Task.all
   end
 
   def create
-    task = current_user.tasks.build(params.require(:task).permit(:content))
-    task.save!
-    @tasks = Task.all
-  end
-
-  def destroy
-    task = current_user.tasks.find(params[:id])
-    task.destroy
-    @tasks = Task.all
+    render json: Task.create!(task_params)
   end
 
   def update
-    task = current_user.tasks.find(params[:id])
-    task.update_attributes!(done: (params[:done] == "true"))
-    @tasks = Task.all
+    task = Task.find(params[:id])
+    render json: task.update_attributes!(task_params)
   end
 
-  def start
-    @task = Task.new
-    if current_user
-      @tasks = current_user.tasks
-    else
-      @tasks = Task.all
-    end
+  def destroy
+    Task.find(params[:id]).destroy
+    render nothing: true
+  end
+
+  private
+
+  def task_params
+    params[:task].permit(:content)
   end
 end
