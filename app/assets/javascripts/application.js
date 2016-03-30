@@ -1,31 +1,42 @@
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require bootstrap
-//= require_tree .
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require pomodoro_timer
 
-
-$(function(){
-  $(".new-tasks-text").focus();
-
-// Adding new tasks
-//  $("form").submit(function(e) {
-//    e.preventDefault();
-//    var input = $(".new-tasks-text");
-//    var li = $("<li>").text(input.val());
-//    $("ol.tasks").append(li);
-//    input.val("");
-
-//// Selecting an active tasks
-//    li.click(function() {
-//      $(this).toggleClass("selected");
-//    });
-//
-//  });
-
-// Selecting an active tasks
-  $(".tasks li").click(function(){
-    $(this).toggleClass("selected");
-  });
+// for more details see: http://emberjs.com/guides/application/
+window.App = Ember.Application.create({
+  rootElement: "#ember-app",
+  location: "history",
+  LOG_TRANSITIONS: true
 });
 
+
+// Debugging
+window.a = function(property) {
+  var model = d().get("model");
+
+  if (property) {
+    return model.get(property);
+  } else {
+    return model;
+  }
+};
+
+window.d = function(property) {
+  var path = c("application").get("currentPath");
+
+  var controller = c(path.split(".").slice(-1).join(".")) ||
+                   c(path.split(".").slice(-2).join("."));
+
+  if (property) {
+    return controller.get(property);
+  } else {
+    return controller
+  }
+};
+
+window.c = function(name) {
+  return App.__container__.lookup("controller:" + name);
+};

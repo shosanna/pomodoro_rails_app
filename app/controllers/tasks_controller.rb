@@ -1,38 +1,25 @@
 class TasksController < ApplicationController
-
-
   def index
-    @task = Task.new
-    if current_user
-      @tasks = current_user.tasks
-    else
-      @tasks = Task.all
-    end
+    render json: Task.all
   end
 
-
   def create
-    @task = current_user.tasks.build(params.require(:task).permit(:content))
-    @task.save!
+    render json: Task.create!(task_params)
+  end
+
+  def update
+    task = Task.find(params[:id])
+    render json: task.update_attributes!(task_params)
   end
 
   def destroy
-
+    Task.find(params[:id]).destroy
+    render nothing: true
   end
 
-  def show
+  private
 
+  def task_params
+    params[:task].permit(:content)
   end
-
-
-  def start
-    @task = Task.new
-    if current_user
-      @tasks = current_user.tasks
-    else
-      @tasks = Task.all
-    end
-
-  end
-
 end
